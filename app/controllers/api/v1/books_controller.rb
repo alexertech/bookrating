@@ -4,12 +4,12 @@ module Api
 
             def index
                 books = Book.all
-                render json: BookSerializer.new(books).serialized_json
+                render json: BookSerializer.new(books, options).serialized_json
             end
 
             def show
                 book = Book.find_by(slug: params[:slug])
-                render json: BookSerializer.new(book).serialized_json
+                render json: BookSerializer.new(book, options).serialized_json
             end
 
             def create
@@ -24,7 +24,7 @@ module Api
             def update
                 book = Book.find_by(slug: params[:slug])
                 if book.update(book_params)
-                    render json: BookSerializer.new(book).serialized_json
+                    render json: BookSerializer.new(book, options).serialized_json
                 else
                     render json: {error: book.error.messages}, status: 422
                 end
@@ -45,6 +45,10 @@ module Api
 
             def book_params
                 params.require(:book).permit(:name, :image_url)
+            end
+
+            def options
+                @options ||=  { include: %i[reviews] }
             end
         end
     end
