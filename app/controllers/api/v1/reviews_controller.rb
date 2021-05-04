@@ -8,7 +8,7 @@ module Api
                 review = Review.new(review_params)
             
                 if review.save
-                    render josn: ReviewSerializer.new(review).serialized_json
+                    render json: ReviewSerializer.new(review).serialized_json
                 else
                     render json: { error: review.errors.messages }, status: 422
                     
@@ -16,7 +16,7 @@ module Api
             end
 
             def destroy
-                review = Review.new(params[:id])
+                review = Review.find_by(id: params[:id])
             
                 if review.destroy
                     head :no_content
@@ -27,7 +27,7 @@ module Api
 
             private
             def review_params
-                params.require(:review).permit(:title, :description, :scoire, :book_id)
+                params.require(:review).permit(:title, :description, :score, :book_id)
             end
         end
     end
