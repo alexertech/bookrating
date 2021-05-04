@@ -2,6 +2,8 @@ module Api
     module V1
         class BooksController < ApplicationController
 
+            protect_from_forgery with: :null_session
+
             def index
                 books = Book.all
                 render json: BookSerializer.new(books, options).serialized_json
