@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
+import BooksGrid from './BooksGrid'
 
 const Books = () => {
 
@@ -15,15 +16,27 @@ const Books = () => {
         .catch( resp => console.log(resp) )
     }, [books.length])
 
-    const list = books.map( item=> {
-        return (<li key={item.attributes.name}>{item.attributes.name}</li>)
+    const grid = books.map( item=> {
+        return (
+            <BooksGrid 
+            key={item.attributes.name}
+            attributes={item.attributes}
+            
+        />)
     })
 
     return (
-        <Fragment>
-            <div>List of the Books#index</div>
-            <ul>{list}</ul>
-        </Fragment>
+        <div className="home">
+            <div className="header">
+                <h1>Books Rating</h1>
+                <div className="subHeader">
+                    Honest books reviews
+                </div>
+            </div>
+            <div className="grid">
+                <ul>{grid}</ul>
+            </div>            
+        </div>
     )
 
 }
