@@ -1,4 +1,5 @@
 import React from 'react'
+import {BrowserRouter as Router, Link} from 'react-router-dom'
 
 const BooksGrid = (props) => {
     return(
@@ -9,7 +10,7 @@ const BooksGrid = (props) => {
             <div className="book-name">{props.attributes.name}</div>
             <div className="book-score">{props.attributes.avg_score}</div>
             <div className="book-link">
-                <a href={`/book/${props.attributes.slug}`}>Details</a>
+                <Link to={`/book/${props.attributes.slug}`}>Details</Link>
             </div>
         </div>
     )

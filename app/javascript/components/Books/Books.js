@@ -20,22 +20,25 @@ const Books = () => {
         return (
             <BooksGrid 
             key={item.attributes.name}
-            attributes={item.attributes}
-            
+            attributes={item.attributes}      
         />)
     })
 
     return (
-        <div className="home">
-            <div className="header">
-                <h1>Books Rating</h1>
-                <div className="subHeader">
+        <div className="section">
+            <div className="container">
+                <h1 className="title">
+                    Books Rating
+                </h1>
+                <p class="subtitle">
                     Honest books reviews
-                </div>
+                </p>
             </div>
-            <div className="grid">
-                <ul>{grid}</ul>
-            </div>            
+            <div className="container">
+                <div className="grid">
+                    <ul>{grid}</ul>
+                </div>            
+            </div>
         </div>
     )
 
