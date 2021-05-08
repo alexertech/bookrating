@@ -20,23 +20,23 @@ const Books = () => {
         return (
             <BooksGrid 
             key={item.attributes.name}
-            attributes={item.attributes}      
-        />)
+            attributes={item.attributes} />
+        )
     })
 
     return (
-        <div className="section">
+        <div className="container is-max-desktop">
             <div className="container">
                 <h1 className="title">
                     Books Rating
                 </h1>
-                <p class="subtitle">
+                <p className="subtitle">
                     Honest books reviews
                 </p>
             </div>
             <div className="container">
-                <div className="grid">
-                    <ul>{grid}</ul>
+                <div className="columns mt-6 is-centered">
+                    {grid}
                 </div>            
             </div>
         </div>
