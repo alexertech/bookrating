@@ -10,9 +10,21 @@ import {BrowserRouter as Router, Route } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Router>
-      <Route path="/" component={App} />
-    </Router>,
+    <div className="container is-max-desktop">
+      <section className="hero is-info box">
+          <div className="hero-body">
+              <p className="title">
+                <a className="has-text-white" href="/">Book Rating</a>
+              </p>
+              <p className="subtitle">
+                  Honest books reviews
+              </p>
+          </div>
+      </section>
+      <Router>
+        <Route path="/" component={App} />
+      </Router>
+    </div>,
     document.body.appendChild(document.createElement('div')),
   )
 })

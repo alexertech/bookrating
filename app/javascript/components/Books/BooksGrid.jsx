@@ -24,24 +24,10 @@ const BooksGrid = () => {
     })
 
     return (
-        <div>
-            <section className="hero is-info">
-                <div className="hero-body">
-                    <p className="title">
-                        Books Rating
-                    </p>
-                    <p className="subtitle">
-                        Honest books reviews
-                    </p>
-                </div>
-            </section>
-            <div className="container is-max-desktop">
-                <div className="container">
-                    <div className="columns mt-6 is-centered">
-                        {grid}
-                    </div>            
-                </div>
-            </div>
+        <div className="container">
+            <div className="columns mt-6 is-centered">
+                {grid}
+            </div>            
         </div>
     )
 }

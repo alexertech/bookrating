@@ -12,7 +12,8 @@ const BooksCard = (props) => {
                 </header>
                 <div className="card-image">
                     <figure className="image is-4by5">
-                        <img src={props.attributes.image_url} alt={props.attributes.name}/>
+                        <img src={props.attributes.image_url} 
+                             alt={props.attributes.name}/>
                     </figure>
                 </div>
                 <div className="card-content">
@@ -22,7 +23,8 @@ const BooksCard = (props) => {
                 </div>
                 <footer className="card-footer">
                     <div className="content">
-                        <Link className="card-footer-item" to={`/books/${props.attributes.slug}`}>Details</Link>
+                        <Link className="card-footer-item" 
+                              to={`/books/${props.attributes.slug}`}>Details</Link>
                     </div>
                 </footer>
             </div>
