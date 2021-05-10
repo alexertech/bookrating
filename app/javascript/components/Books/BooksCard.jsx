@@ -22,7 +22,7 @@ const BooksCard = (props) => {
                 </div>
                 <footer className="card-footer">
                     <div className="content">
-                        <Link className="card-footer-item" to={`/book/${props.attributes.slug}`}>Details</Link>
+                        <Link className="card-footer-item" to={`/books/${props.attributes.slug}`}>Details</Link>
                     </div>
                 </footer>
             </div>
