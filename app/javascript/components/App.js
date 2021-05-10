@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import Books from './Books/Books'
+import Books from './Main'
 import Book from './Book/Book'
 
 const App = () => {
