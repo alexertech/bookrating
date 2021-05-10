@@ -1,8 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
-import BooksGrid from './Books/BooksGrid'
+import BooksCard from './BooksCard'
 
-const Books = () => {
+// The BookGrid, listing all the books
+const BooksGrid = () => {
 
     const [books, setBooks] = useState([])
 
@@ -16,7 +17,7 @@ const Books = () => {
 
     const grid = books.map( item=> {
         return (
-            <BooksGrid 
+            <BooksCard 
             key={item.attributes.name}
             attributes={item.attributes} />
         )
@@ -43,7 +44,6 @@ const Books = () => {
             </div>
         </div>
     )
-
 }
 
-export default Books
+export default BooksGrid

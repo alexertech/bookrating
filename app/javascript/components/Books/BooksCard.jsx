@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Link} from 'react-router-dom'
 
-const BooksGrid = (props) => {
+const BooksCard = (props) => {
     return(
         <div className="column is-one-quarter">
             <div className="card">
@@ -30,4 +30,4 @@ const BooksGrid = (props) => {
     )
 }
 
-export default BooksGrid
+export default BooksCard
