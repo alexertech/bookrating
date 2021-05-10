@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import axios from 'axios'
 import BookTile from './BookTile'
+import ReviewForm from './ReviewForm'
 
 const Book = (props) => {
     const [book, setBook] = useState({})
@@ -20,24 +21,58 @@ const Book = (props) => {
         .catch( resp => console.log(resp))
     },[])
 
+    const handleChange = (e) => {
+        e.preventDefault()
+        setReview(
+            Object.assign({}, review, {[e.target.name]: e.target.value})
+        )
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const csrfToken = document.querySelector('[name=csrf-token]').content
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
+        const book_id = book.data.id
+        axios.post('/api/v1/reviews', {review, book_id})
+        .then(resp=> {
+            debugger
+        })
+        .catch(resp => {})
+    }
+
     return (
         <div className="container">
-            <div className="tile">
-                <div className="tile is-parent">
-                    {
-                        loaded &&
-                        <BookTile
-                        attributes={book.data.attributes}
-                        reviews={book.included}
-                        />
-                    }
+            {
+            loaded &&
+            <Fragment>
+            <div className="tile is-ancestor">
+                <div className="tile is-vertical is-parent">
+                    <BookTile
+                    attributes={book.data.attributes}
+                    reviews={book.included}
+                    />
                 </div>
                 <div className="tile is-parent">
-                    <article className="tile is-child box">
-                        Reviews
-                    </article>
+                    <div className="tile is-child box">
+                        <ReviewForm 
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                        atributes={book.data.atributes}
+                        review={review}
+                        />
+                    </div>
+                </div>
+            </div>    
+            <div className="tile is-ancestor">
+                <div className="tile is-parent">
+                    <div className="tile is-child box">
+                        <p className="subtitle">Reviews</p>
+                    </div>
                 </div>
             </div>
+            </Fragment>
+            }
         </div>
     )
 }
