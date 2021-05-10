@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import BookCard from './BookTile'
+import BookTile from './BookTile'
 
 const Book = (props) => {
     const [book, setBook] = useState({})
