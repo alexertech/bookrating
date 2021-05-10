@@ -6,7 +6,7 @@ const BookTile = (props) => {
 
     return(
         <div className="tile is-vertical">
-            <div class="tile box">
+            <div className="tile box">
                 <div className="title">{name}</div>
             </div>
             <div className="tile">

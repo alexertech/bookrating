@@ -32,8 +32,8 @@ const Book = (props) => {
                         />
                     }
                 </div>
-                <div class="tile is-parent">
-                    <article class="tile is-child box">
+                <div className="tile is-parent">
+                    <article className="tile is-child box">
                         Reviews
                     </article>
                 </div>
