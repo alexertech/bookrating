@@ -36,7 +36,9 @@ const Book = (props) => {
         const book_id = book.data.id
         axios.post('/api/v1/reviews', {review, book_id})
         .then(resp=> {
-            debugger
+            const included = [...book.included, resp.data.data]
+            setBook({...book, included})
+            setReview({title:'', description:'', score:0})
         })
         .catch(resp => {})
     }
