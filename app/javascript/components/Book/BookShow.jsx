@@ -42,6 +42,10 @@ const Book = (props) => {
         })
         .catch(resp => {})
     }
+    const setRating = (score, e) => {
+        e.preventDefault()
+        setReview({...review, score})
+    }
 
     return (
         <div className="container">
@@ -60,6 +64,7 @@ const Book = (props) => {
                         <ReviewForm 
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
+                        setRating={setRating}
                         atributes={book.data.atributes}
                         review={review}
                         />

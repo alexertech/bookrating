@@ -1,17 +1,18 @@
 import React, { Fragment } from "react"
 
-const ratingOptions = [5,4,3,2,1].map( (score,index) => {
-    return (
-        <Fragment>
-        <input type="radio" value={score} name="rating"
-               onChange={() => console.log('selected:', score)}
-               id={`rating-${score}`} />
-        <label>{score}</label>
-        </Fragment>
-    )
-})
+
 
 const ReviewForm = (props) => {
+    const ratingOptions = [5,4,3,2,1].map( (score,index) => {
+        return (
+            <Fragment>
+            <input type="radio" value={score} name="rating"
+                   onChange={() => console.log('selected:', score)}
+                   id={`rating-${score}`} checked={props.review.score == score} />
+            <label onClick={props.setRating.bind(this, score)} ></label>
+            </Fragment>
+        )
+    })
     return (
         <div className="container">
             <p className="subtitle">
@@ -38,8 +39,8 @@ const ReviewForm = (props) => {
                 </div>  
                 <div className="field">
                     <label className="label">Rating</label>
-                    <div className="control">
-                        {ratingOptions}
+                    <div className="RatingContainer RatingBox">
+                            {ratingOptions}
                     </div>
                 </div>
                 <button type="submit">Submit your review</button>
