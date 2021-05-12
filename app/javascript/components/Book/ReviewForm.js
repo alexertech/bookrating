@@ -24,7 +24,7 @@ const ReviewForm = (props) => {
                     <div className="control">
                         <input className="input" type="text" name="title" 
                                placeholder="Review title"
-                               values={props.review.title}
+                               value={props.review.title}
                                onChange={props.handleChange} />
                     </div>                    
                 </div>
@@ -33,7 +33,7 @@ const ReviewForm = (props) => {
                     <div className="control">
                         <textarea className="textarea" name="description"
                                   placeholder="Review description" 
-                                  values={props.review.description}
+                                  value={props.review.description}
                                   onChange={props.handleChange} ></textarea>
                     </div>
                 </div>  
