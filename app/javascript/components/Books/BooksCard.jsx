@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Link} from 'react-router-dom'
+import ReviewStars from '../Book/ReviewStars'
 
 const BooksCard = (props) => {
     return(
@@ -18,7 +19,7 @@ const BooksCard = (props) => {
                 </div>
                 <div className="card-content">
                     <div className="content">
-                        {props.attributes.avg_score}                    
+                        <ReviewStars score={props.attributes.avg_score}/>
                     </div>
                 </div>
                 <footer className="card-footer">

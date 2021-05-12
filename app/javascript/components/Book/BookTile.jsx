@@ -1,4 +1,5 @@
 import React from 'react'
+import ReviewStars from './ReviewStars'
 
 const BookTile = (props) => {
     const {name, image_url, avg_score} = props.attributes
@@ -21,7 +22,7 @@ const BookTile = (props) => {
                         {total} user reviews
                     </div>
                     <div> 
-                        {avg_score} out of 5
+                        <ReviewStars score={avg_score}/>
                     </div>
                     
                 </div>
