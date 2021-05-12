@@ -2,6 +2,7 @@ import React, {useState, useEffect, Fragment} from 'react'
 import axios from 'axios'
 import BookTile from './BookTile'
 import ReviewForm from './ReviewForm'
+import ReviewList from './ReviewList'
 
 const Book = (props) => {
     const [book, setBook] = useState({})
@@ -47,6 +48,17 @@ const Book = (props) => {
         setReview({...review, score})
     }
 
+    let reviews
+    if (loaded && book.included ) {
+        reviews = book.included.map( (item, index) => {
+            return (
+                <ReviewList 
+                key={index}
+                attributes={item.attributes}/>
+            )
+        } )
+    }
+
     return (
         <div className="container">
             {
@@ -75,6 +87,9 @@ const Book = (props) => {
                 <div className="tile is-parent">
                     <div className="tile is-child box">
                         <p className="subtitle">Reviews</p>
+                        <div className="container">
+                            {reviews}
+                        </div>
                     </div>
                 </div>
             </div>
