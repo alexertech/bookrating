@@ -4,7 +4,7 @@ import ReviewStars from '../Book/ReviewStars'
 
 const BooksCard = (props) => {
     return(
-        <div className="column is-one-quarter">
+        <div className="column is-one-third">
             <div className="card">
                 <header className="card-header">
                     <p className="card-header-title">

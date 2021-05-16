@@ -25,7 +25,7 @@ const BooksGrid = () => {
 
     return (
         <div className="container">
-            <div className="columns mt-6 is-centered">
+            <div className="columns is-multiline">
                 {grid}
             </div>            
         </div>
