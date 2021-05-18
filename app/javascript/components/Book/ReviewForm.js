@@ -43,7 +43,7 @@ const ReviewForm = (props) => {
                             {ratingOptions}
                     </div>
                 </div>
-                <button type="submit">Submit your review</button>
+                <button className="button is-primary is-rounded" type="submit">Submit your review</button>
             </form>
         </div>
     )
