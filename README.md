@@ -1,24 +1,21 @@
-# README
+# Book Rating
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple application using React as frontend and Ruby On Rails as the API backend. The database is set for PostgreSQL. The current version of the API implements all the CRUD for the book creation, but haven't build the views yet.
 
-Things you may want to cover:
+![Book Rating Demo](demo.gif)
 
-* Ruby version
 
-* System dependencies
+## To-Do:
 
-* Configuration
+- User profiles
+- Books publications and reviews must be owned by a user
+- Views for the current API of the Book.
 
-* Database creation
+## Tools
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `Insomnia` for the API testing
+- `VScode`
+- Built on Debian Linux
+- ruby 2.6.7p197
+- node v14.17.0
+- rails 6.1.3.1
