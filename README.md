@@ -12,10 +12,10 @@ Simple application using React as frontend and Ruby On Rails as the API backend.
 
 - `Insomnia` for the API testing
 - `VScode`
-- Built on Debian Linux
-- ruby 2.6.7p197
-- node v14.17.0
-- rails 6.1.3.1
+- Built on `Debian Linux`
+- `ruby 2.6.7p197`
+- `node v14.17.0`
+- `rails 6.1.3.1`
 
 ## Demo
 
